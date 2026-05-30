@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyrille Jourdan – YouCar</title>
+  <meta name="description" content="Cyrille Jourdan – Fondateur YouCar, courtier automobile spécialisé Porsche & import Europe.">
+  <style>
+    :root{
+      --red:#d9142b;
+      --black:#0b0b0b;
+      --dark:#202020;
+      --grey:#f3f3f3;
+      --line:#d9d9d9;
+      --muted:#777;
+      --white:#fff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:#f5f5f5;
+      color:var(--black);
+    }
+    .page{
+      max-width:520px;
+      margin:0 auto;
+      background:#fff;
+      min-height:100vh;
+      overflow:hidden;
+      box-shadow:0 20px 70px rgba(0,0,0,.08);
+    }
+    .hero{
+      padding:34px 22px 20px;
+      text-align:center;
+      background:linear-gradient(180deg,#fff 0%,#fff 68%,#f2f2f2 100%);
+    }
+    .logo{
+      width:142px;
+      height:auto;
+      display:block;
+      margin:0 auto 18px;
+    }
+    .red-mini{
+      width:42px;
+      height:2px;
+      background:var(--red);
+      margin:0 auto 18px;
+    }
+    h1{
+      margin:0;
+      font-size:30px;
+      line-height:1.08;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+    .founder{
+      margin:9px 0 14px;
+      color:var(--red);
+      font-size:13px;
+      letter-spacing:.34em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+    .baseline{
+      margin:0 auto 24px;
+      max-width:380px;
+      color:#222;
+      font-size:16px;
+      line-height:1.45;
+    }
+    .actions{
+      display:grid;
+      gap:9px;
+      margin:0 auto;
+    }
+    .action{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      min-height:50px;
+      padding:0 16px;
+      border:1px solid #e2e2e2;
+      border-radius:6px;
+      background:rgba(255,255,255,.94);
+      text-decoration:none;
+      color:var(--black);
+      box-shadow:0 8px 20px rgba(0,0,0,.05);
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:13px;
+    }
+    .action small{
+      display:block;
+      margin-top:3px;
+      font-size:12px;
+      color:#555;
+      font-weight:500;
+      letter-spacing:0;
+      text-transform:none;
+    }
+    .action .arrow{
+      color:var(--red);
+      font-size:20px;
+      font-weight:300;
+    }
+    .visual{
+      height:245px;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,0) 62%,#fff 100%),
+        radial-gradient(circle at 50% 25%,rgba(255,255,255,.3),rgba(0,0,0,.05) 60%),
+        url("assets/hero-porsche-placeholder.jpg");
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      padding:0 24px 18px;
+      border-top:1px solid #efefef;
+      border-bottom:1px solid #efefef;
+    }
+    .visual-note{
+      background:rgba(255,255,255,.88);
+      border:1px solid #eee;
+      padding:9px 14px;
+      font-size:11px;
+      color:#777;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    section{
+      padding:30px 24px;
+    }
+    .section-title{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:16px;
+      margin-bottom:20px;
+      color:var(--black);
+      letter-spacing:.38em;
+      text-transform:uppercase;
+      font-size:14px;
+      font-weight:800;
+      text-align:center;
+    }
+    .section-title::before,.section-title::after{
+      content:"";
+      height:1px;
+      background:#bfbfbf;
+      flex:1;
+      max-width:110px;
+    }
+    .section-title span{
+      position:relative;
+    }
+    .section-title span::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:-12px;
+      width:28px;
+      height:2px;
+      background:var(--red);
+    }
+    .services{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:10px;
+      color:#333;
+      font-size:15px;
+      line-height:1.45;
+    }
+    .services li{
+      padding-left:22px;
+      position:relative;
+    }
+    .services li::before{
+      content:"—";
+      color:var(--red);
+      position:absolute;
+      left:0;
+      font-weight:900;
+    }
+    .socials{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:10px;
+    }
+    .socials a{
+      border:1px solid #ddd;
+      border-radius:6px;
+      padding:14px 6px;
+      text-align:center;
+      color:#111;
+      text-decoration:none;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .reviews{
+      border:1px solid #e7e7e7;
+      background:#fafafa;
+      border-radius:8px;
+      padding:20px 16px;
+      text-align:center;
+    }
+    .stars{
+      color:var(--red);
+      letter-spacing:.18em;
+      font-size:25px;
+      margin:4px 0 8px;
+    }
+    .reviews p{
+      margin:0 0 16px;
+      color:#333;
+      font-size:15px;
+      line-height:1.35;
+    }
+    .outline{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      border:1px solid #111;
+      min-height:42px;
+      padding:0 22px;
+      color:#111;
+      text-decoration:none;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:12px;
+      font-weight:800;
+    }
+    footer{
+      border-top:3px solid var(--red);
+      background:#fff;
+      padding:24px 24px 0;
+    }
+    .footer-card{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      padding-bottom:22px;
+    }
+    .footer-card img{
+      width:74px;
+      flex:0 0 auto;
+    }
+    .footer-card strong{
+      display:block;
+      font-size:17px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-bottom:5px;
+    }
+    .footer-card em{
+      display:block;
+      font-style:normal;
+      color:var(--red);
+      font-size:11px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      font-weight:800;
+      margin-bottom:8px;
+    }
+    .footer-card p{
+      margin:0;
+      color:#333;
+      line-height:1.55;
+      font-size:13px;
+    }
+    .black-footer{
+      background:#0b0b0b;
+      color:#cfcfcf;
+      margin:0 -24px;
+      padding:14px 20px;
+      text-align:center;
+      font-size:11px;
+      letter-spacing:.12em;
+    }
+    @media (min-width:521px){
+      body{padding:30px 0}
+      .page{border-radius:18px}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <header class="hero">
+      <img class="logo" src="assets/logo-youcar.png" alt="YouCar">
+      <div class="red-mini"></div>
+
+      <h1>Cyrille Jourdan</h1>
+      <div class="founder">Fondateur · YouCar</div>
+      <p class="baseline">Courtier automobile spécialisé dans l’importation et la sélection de Porsche européennes.</p>
+
+      <div class="actions">
+        <a class="action" href="tel:+33749678800"><span>Appeler<small>07 49 67 88 00</small></span><span class="arrow">›</span></a>
+        <a class="action" href="https://wa.me/33749678800"><span>WhatsApp<small>Discussion directe</small></span><span class="arrow">›</span></a>
+        <a class="action" href="mailto:info@you-car.fr"><span>Email<small>info@you-car.fr</small></span><span class="arrow">›</span></a>
+        <a class="action" href="https://www.you-car.fr"><span>Site Web<small>www.you-car.fr</small></span><span class="arrow">›</span></a>
+        <a class="action" href="cyrille-jourdan-youcar.vcf" download><span>Ajouter à mes contacts<small>Enregistrer la fiche</small></span><span class="arrow">↓</span></a>
+      </div>
+    </header>
+
+    <div class="visual">
+      <div class="visual-note">Image Porsche à remplacer dans Wix</div>
+    </div>
+
+    <section>
+      <div class="section-title"><span>Nos services</span></div>
+      <ul class="services">
+        <li>Recherche personnalisée de Porsche européennes</li>
+        <li>Analyse des annonces, configurations et historiques</li>
+        <li>Inspection indépendante selon protocole 150 points</li>
+        <li>Négociation vendeur professionnel en Europe</li>
+        <li>Gestion administrative d’importation vers France</li>
+        <li>Livraison à domicile ou récupération accompagnée</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="section-title"><span>Suivez-moi</span></div>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/A_REMPLACER">LinkedIn</a>
+        <a href="https://www.instagram.com/A_REMPLACER">Instagram</a>
+        <a href="https://www.facebook.com/A_REMPLACER">Facebook</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title"><span>Avis clients</span></div>
+      <div class="reviews">
+        <div class="stars">★★★★★</div>
+        <p><strong>140+ avis Google</strong><br>Une relation client fondée sur la transparence, la précision et l’accompagnement.</p>
+        <a class="outline" href="https://www.google.com/search?q=YouCar+avis">Voir les avis</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-card">
+        <img src="assets/logo-youcar.png" alt="YouCar">
+        <div>
+          <strong>Cyrille Jourdan</strong>
+          <em>Fondateur · YouCar</em>
+          <p>+33 (0)7 49 67 88 00<br>info@you-car.fr<br>you-car.fr</p>
+        </div>
+      </div>
+      <div class="black-footer">Courtier automobile · Importation Porsche européennes</div>
+    </footer>
+
+  </main>
+</body>
+</html>
